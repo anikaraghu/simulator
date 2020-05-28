@@ -1,0 +1,7 @@
+2000-01-01 00:20:13 946686013.000000 [message] [tgen-main.c:45] [_tgenmain_run] Initializing TGen v1.0.0 running GLib v2.56.4 and IGraph v0.7.1 on host webclient5 with process id 1001
+2000-01-01 00:20:13 946686013.000000 [message] [tgen-main.c:76] [_tgenmain_run] Set SIG_IGN for signal SIGPIPE
+2000-01-01 00:20:13 946686013.000000 [info] [tgen-graph.c:1193] [_tgengraph_loadNewGraph] reading graphml action graph at 'tgen.torwebclient.graphml.xml'...
+2000-01-01 00:20:13 946686013.000000 [info] [tgen-graph.c:1205] [_tgengraph_loadNewGraph] successfully read graphml action graph at 'tgen.torwebclient.graphml.xml'
+2000-01-01 00:20:13 946686013.000000 [warning] [tgen-graph.c:1177] [_tgengraph_parseGraphProperties] failed to verify graph properties and attributes
+2000-01-01 00:20:13 946686013.000000 [critical] [tgen-graph.c:1299] [tgengraph_new] error (4) while loading graph: Vertex attribute 'size' is unknown, please check your config and try again.
+2000-01-01 00:20:13 946686013.000000 [critical] [tgen-main.c:82] [_tgenmain_run] cannot continue: traffic generator config file 'tgen.torwebclient.graphml.xml' failed validation

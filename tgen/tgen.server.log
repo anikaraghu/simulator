@@ -1,0 +1,9 @@
+2020-05-25 17:24:44 1590427484.174154 [message] [tgen-main.c:45] [_tgenmain_run] Initializing TGen v1.0.0 running GLib v2.56.4 and IGraph v0.7.1 on host ip-172-31-61-203 with process id 1526
+2020-05-25 17:24:44 1590427484.174193 [message] [tgen-main.c:76] [_tgenmain_run] Set SIG_IGN for signal SIGPIPE
+2020-05-25 17:24:44 1590427484.175515 [message] [tgen-graph.c:1317] [tgengraph_new] successfully loaded graphml file 'resource/server.tgenrc.graphml' and validated actions: graph is weakly connected with 1 cluster, 1 vertex, and 0 edges
+2020-05-25 17:24:44 1590427484.175529 [message] [tgen-log.c:77] [tgenlog_setLogFilterLevel] Changed log level filter from 'default' to 'message'
+2020-05-25 17:24:44 1590427484.177521 [message] [tgen-server.c:161] [tgenserver_new] server listening at 0.0.0.0:8888
+2020-05-25 17:24:44 1590427484.177558 [message] [tgen-driver.c:675] [_tgendriver_startServerHelper] Started server on port 8888 using descriptor 5
+2020-05-25 17:24:44 1590427484.177587 [message] [tgen-main.c:127] [_tgenmain_run] entering main loop to watch descriptors
+2020-05-25 17:24:45 1590427485.175889 [message] [tgen-driver.c:254] [_tgendriver_onHeartbeat] [driver-heartbeat] [bytes-read=0,bytes-written=0]
+2020-05-25 17:24:46 1590427486.175832 [message] [tgen-driver.c:254] [_tgendriver_onHeartbeat] [driver-heartbeat] [bytes-read=0,bytes-written=0]

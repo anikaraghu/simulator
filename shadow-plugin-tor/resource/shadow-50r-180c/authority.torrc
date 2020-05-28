@@ -1,0 +1,23 @@
+DirServer 4uthority1 v3ident=869A9F543D2D9D50D4B3B53EEDBB669C8C35BCA8 orport=9111 4uthority1:9112 4DB9 55EC 7552 D205 CF24 FFED 7FB9 8022 65AA 62C8
+TestingTorNetwork 1
+AllowInvalidNodes "entry,middle,exit,introduction,rendezvous"
+ServerDNSDetectHijacking 0
+NumCPUs 1
+SafeLogging 0
+WarnUnsafeSocks 0
+ContactInfo shadow-support@cs.umn.edu
+DynamicDHGroups 0
+DisableDebuggerAttachment 0
+CellStatistics 1
+DirReqStatistics 1
+EntryStatistics 1
+ExitPortStatistics 1
+ExtraInfoStatistics 1
+V3AuthoritativeDirectory 1
+V2AuthoritativeDirectory 1
+AuthoritativeDirectory 1
+ORPort 9111
+DirPort 9112
+SocksPort 0
+ExitPolicy "reject *:*"
+

@@ -1,0 +1,4 @@
+HOW WE DO THIS SHIT
+
+1. in client data look for streams_created > 1, check timestamps on these
+2. compare these timestamps to the first HTTP response packet seen (in fileserver) after the X initialization time - (send_state = SEND_SUCCESS / stream-success) or even just look at streams-created 
