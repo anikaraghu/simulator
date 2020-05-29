@@ -278,7 +278,7 @@ def generate(args):
 
     # build the XML
     root = etree.Element("shadow")
-    root.set("stoptime", "3600")
+    root.set("stoptime", "1200") #TODO ANIKA + GRACE change to 1200
     root.set("preload", "~/.shadow/lib/libshadow-interpose.so")
     root.set("environment", "OPENSSL_ia32cap=~0x200000200000000;EVENT_NOSELECT=1;EVENT_NOPOLL=1;EVENT_NOKQUEUE=1;EVENT_NODEVPOLL=1;EVENT_NOEVPORT=1;EVENT_NOWIN32=1")
 
