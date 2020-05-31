@@ -1,4 +1,5 @@
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="heartbeat" attr.type="string" for="node" id="d6"/>
   <key attr.name="peers" attr.type="string" for="node" id="d5" />
   <key attr.name="sendsize" attr.type="string" for="node" id="d3" />
   <key attr.name="recvsize" attr.type="string" for="node" id="d2" />
@@ -7,6 +8,7 @@
   <graph edgedefault="directed">
     <node id="start">
       <data key="d5">fileserver:80</data>
+      <data key="d6">100 ms</data>
     </node>
     <node id="stream">
       <data key="d2">1 MiB</data>
