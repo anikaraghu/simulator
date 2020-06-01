@@ -6,6 +6,7 @@ INITIALIZATION_TIME = 1000
 
 ap = argparse.ArgumentParser(description='Analyze streams for connection tracking', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument('experiment', action="store", type=str, help="path to experiment (e.g. 'shadow-minimal')", metavar='FOLDER', default=None)
+ap.add_argument('outputfolder', action="store", type=str, help="where the output text file should be stored", metavar='FOLDER', default=None)
 args = ap.parse_args()
 
 path_to_client = args.experiment + "/shadow.data/hosts/client/stdout-client.tgen.1000.log" 
@@ -13,7 +14,6 @@ server_file = open(path_to_client, "r")
 first_line = server_file.readline()
 start = round(float(first_line.split(' ')[2]), 2)
 print("start of experiment", start)
-
 
 start_tracking = 0
 path_to_server = args.experiment + "/shadow.data/hosts/fileserver/stdout-fileserver.tgen.1000.log" 
@@ -57,20 +57,21 @@ def percent_eliminated(streams, d):
         if stream < start_tracking or stream > start_tracking + d:
             num_eliminated += 1
     print(num_eliminated)
-    return float(num_eliminated)/len(streams)
+    return 100 * float(num_eliminated)/len(streams)
 
-
-f = open("logging.txt", "w")
-f.write(args.experiment + "\n")
+debug_file = open("debug.txt", "a")
+f = open(args.outputfolder + "/" + args.experiment + ".txt", "w")
+debug_file.write(args.experiment + "\n")
 
 streams = stream_analysis()
 # for stream in streams
-f.write(str(streams) + "\n")
+debug_file.write(str(streams) + "\n")
 
-# TODO write this out to a file with a specific example 
 ds = [0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
 for d in ds:
     eliminated = percent_eliminated(streams, d)
-    f.write(str(d) + " " + str(eliminated) + "\n")
+    debug_file.write(str(d) + " " + str(eliminated) + "\n")
+    f.write(str(eliminated) + "\n")
 
+debug_file.close()
 f.close()
