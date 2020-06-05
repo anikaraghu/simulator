@@ -2,12 +2,14 @@ import os, argparse
 from os import walk
 import datetime
 
-INITIALIZATION_TIME = 1000
+INITIALIZATION_TIME = 1060
+EXPERIMENT_END = 1120
 
 ap = argparse.ArgumentParser(description='Analyze streams for connection tracking', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument('experiment', action="store", type=str, help="path to experiment (e.g. 'shadow-minimal')", metavar='FOLDER', default=None)
-ap.add_argument('outputfolder', action="store", type=str, help="where the output text file should be stored", metavar='FOLDER', default=None)
+# ap.add_argument('outputfolder', action="store", type=str, help="where the output text file should be stored", metavar='FOLDER', default=None)
 args = ap.parse_args()
+output_folder = "results"
 
 # get all client log files
 client_files = []
@@ -49,7 +51,8 @@ def stream_analysis():
         for line in client_file:
             if line.find('stream-success') != -1:
                 stream_time = round(float(line.split(' ')[2]) - start, 2)
-                stream_times.append(stream_time)
+                if stream_time > INITIALIZATION_TIME and stream_time < EXPERIMENT_END:
+                    stream_times.append(stream_time)
     return stream_times
 
 def percent_eliminated(streams, d):
@@ -60,8 +63,10 @@ def percent_eliminated(streams, d):
     print(num_eliminated)
     return 100 * float(num_eliminated)/len(streams)
 
-debug_file = open("debugtor.txt", "w")
-f = open(args.outputfolder + "/" + args.experiment + ".txt", "w")
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+debug_file = open(output_folder + "/debug-" + args.experiment + ".txt", "w")
+f = open(output_folder + "/" + args.experiment + ".txt", "w")
 debug_file.write(args.experiment + "\n")
 
 streams = stream_analysis()
