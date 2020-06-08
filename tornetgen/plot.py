@@ -10,17 +10,19 @@ args = ap.parse_args()
 input_folder = "results"
 
 fig = plt.figure()
-input_files = [] 
-for root, dirs, files in os.walk(input_folder):
-    for f in files:
-        if f.find(".txt") > -1 and f.find("debug") == -1:
-            input_files.append(root + "/" + f)
+# input_files = []
+# for root, dirs, files in os.walk(input_folder):
+    # for f in files:
+        # if f.find(".txt") > -1 and f.find("debug") == -1:
+            # input_files.append(root + "/" + f)
+input_files = ['results/tornet-0.001.txt', 'results/tornet-0.002.txt', 'results/tornet-0.003.txt', 'results/tornet-0.004.txt']
 print("Input files: ", input_files)
 
 ds = [0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0]
 line_styles = [':', '--', '-', '-.']
 for findex in range(len(input_files)):
-    curr_file = open(input_files[findex], 'r')
+    f = input_files[findex]
+    curr_file = open(f, 'r')
     percentages = []
     for line in curr_file:
         percentages.append(float(line))
