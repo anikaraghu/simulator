@@ -61,7 +61,10 @@ def percent_eliminated(streams, d):
         if stream < start_tracking or stream > start_tracking + d:
             num_eliminated += 1
     print(num_eliminated)
-    return 100 * float(num_eliminated)/len(streams)
+    if len(streams) > 0:
+        return 100 * float(num_eliminated)/len(streams)
+    else:
+        return 0
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)

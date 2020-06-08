@@ -18,14 +18,16 @@ for root, dirs, files in os.walk(input_folder):
 print("Input files: ", input_files)
 
 ds = [0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0]
-for f in input_files:
-    curr_file = open(f, 'r')
+line_styles = [':', '--', '-', '-.']
+for findex in range(len(input_files)):
+    curr_file = open(input_files[findex], 'r')
     percentages = []
     for line in curr_file:
         percentages.append(float(line))
     # for markers: 'o', markersize = 2, . different dashes: '-', '--', '-.' ':'
-    graph_label = f[:f.find('.txt')]
-    plt.plot(ds, percentages, ':', label=graph_label) 
+    pindex = f.find('.txt') - 1
+    graph_label = "0." + str(f[pindex:pindex+1]) + "% of Tor network"
+    plt.plot(ds, percentages, line_styles[findex], label=graph_label) 
 
 
 plt.title('Start and end stream filter')
