@@ -1,6 +1,6 @@
 # Replicating Large Scale Simulation of Tor 
 
-We attempt to replicate the results of a paper titled [Large Scale Simulation of Tor](https://www.researchgate.net/publication/221053183_Large_Scale_Simulation_of_Tor).
+Our goal is to replicate the results of a paper titled [Large Scale Simulation of Tor](https://www.researchgate.net/publication/221053183_Large_Scale_Simulation_of_Tor).
 
 We simulate the connection tracking attack described in the paper. The paper uses a tool called SSFNet, which has been deprecated since the paper was written. We attempt to produce similar results using a more modern simulation tool called [Shadow](https://shadow.github.io/). 
 
